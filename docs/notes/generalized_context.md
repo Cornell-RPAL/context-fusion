@@ -25,11 +25,54 @@ the model for changes in context, and/or insufficiently capture the temporally v
 context.
 
 We think that we can succeed in this area where others have failed due to two factors: First,
-insights into the nature of context specifically in terms of its use for grounding. Second, the
+we can use insights into the nature of context specifically in terms of its use for grounding to 
+create a sufficiently abstract mathematical framework for context to describe general sources. 
+Second, the
 advent of deep learning approaches (specifically such things as sequence prediction and attention
 mechanisms) may prove useful for selecting salient context.
 
+## Goals
+
+We want a system that can (a) [select relevant context](#selecting-context) at any given point in an 
+interaction and (b) [incorporate general sources  of context](#distribution-modifying-functions) 
+into the symbol grounding process to mitigate potential ambiguous/mistaken groundings.
+
+By (a) we mean that the system should be able to take in a record of an interaction to a certain 
+point in time and determine a weighting of a set of sources of context which corresponds to how much 
+they matter at the current time[^recursive].
+
+By (b) we mean that the system should be able to take an abstract representation of a source of 
+context adhering to some predefined interface and use it to correctly ground symbols in cases where 
+the result would be ambiguous or incorrect without knowledge of the context. Sources of context we 
+would like to be able to encode (as examples) include minimally:
+
+Environmental Context:
+: Knowledge of concrete objects and actions, as well as properties of the same.
+
+Historical Context:
+: Essentially, memory of what has been important thus far in the interaction/memory of the 
+interaction thus far.
+
+Task Context:
+: Semantic understanding of the current task (and subtasks, etc.), which informs what actions and 
+objects are likely to be salient.
+
+Physical Feasibility:
+: Introspective understanding of the physical properties of the robot and of objects in the 
+environment. This includes things like reachability, ability to manipulate in a certain way, etc.
+
+Non-Verbal Entity Indicators:
+: Gestures, etc. that can indicate a certain action or object.
+
+[^recursive]: This task seems remarkably similar to the context construction problem.
+  Maybe there's a higher level/more general problem of which they're both instances that we could use to solve 
+  them both at once?
+
 # Related Work
+
+- @misra_tell_2016 use an energy function approach to grounding to encode limited environmental 
+  context. They can't capture things like historical context, general object properties (the model 
+  they learn can do object similarity matching, but not things like **FINISH**)
 
 # Approach
 
@@ -38,3 +81,5 @@ mechanisms) may prove useful for selecting salient context.
 ## Selecting Context
 
 # Evaluation
+
+# References
