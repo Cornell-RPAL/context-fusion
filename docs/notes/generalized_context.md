@@ -8,6 +8,8 @@ subparagraph: true
 numbersections: true
 colorlinks: true
 toc: false
+header-includes:
+  - \usepackage{pervasives}
 ...
 
 # Problem Definition
@@ -78,7 +80,25 @@ Non-Verbal Entity Indicators:
 
 ## Distribution-Modifying Functions
 
+Intuitively, a context makes certain real-world entities more or less likely to be the correct 
+groundings for certain abstract entities. This is supported by **SOURCES IN PRAGMATICS AND MAYBE 
+PSYCH?**.
+
+As such, we model a generalized context as a **probability distribution-modifying function**. That 
+is, a context can be considered[^data] as follows:
+\newline
+\begin{definition}
+  For $\mathbb{P}$ the set of all probability distributions, a \textbf{context} is a function 
+$c:\mathbb{P}\to\mathbb{P}$ such that for distributions $p,p'\in\mathbb{P}$ and such that $c(p)=p'$, 
+\end{definition}
+
+[^data]: From the point of view of the grounding operation, at least - there's obviously some 
+associated data and computation included in a context outside of this.
+
 ## Selecting Context
+
+This is a later stage of the project. Loosely, I have some thoughts regarding adapting attention 
+mechanisms from neural networks, but I need to give this more thought.
 
 # Evaluation
 

@@ -1,0 +1,129 @@
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\setcounter{tocdepth}{3}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{times}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\makeatletter
+\let\NAT@parse\undefined
+\makeatother
+
+\usepackage[sort&compress,numbers]{natbib}
+\usepackage{bm}
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{times} % assumes new font selection scheme installed
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{multirow}
+\usepackage{hhline}
+\let\proof\relax
+\let\endproof\relax
+\usepackage[font=small]{caption}
+
+\usepackage{amsthm}
+\usepackage{amssymb}  % assumes amsmath package installed
+\usepackage{cite}
+\usepackage{epstopdf}
+\usepackage{makeidx}
+\usepackage{float}
+\usepackage{stfloats}
+\usepackage{mathtools}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+
+\usepackage[noend]{algpseudocode}
+\usepackage{upgreek}
+
+\usepackage{ifthen,version}
+\newboolean{include-notes}
+\usepackage[usenames,dvipsnames]{color}
+
+\setboolean{include-notes}{true}
+\newcommand{\rknote}[1]{\ifthenelse{\boolean{include-notes}}%
+ {\textcolor{Dandelion}{\textbf{RK: #1}}}{}}
+ 
+ \setboolean{include-notes}{true}
+\newcommand{\cmnote}[1]{\ifthenelse{\boolean{include-notes}}%
+ {\textcolor{NavyBlue}{\textbf{CM: #1}}}{}}
+
+\usepackage{tikz}
+\usepackage{braids}
+\usepackage[percent]{overpic}
+
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\usepackage{float}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\usepackage{enumerate}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\newcommand{\coerceSub}[3]{(\mathord{#1}{\smallfrown}\mathord{#2})_{#3}}
+
+%adjust spacing for \cdotp command
+\renewcommand{\dotsb}{%
+  \mathinner{\cdotp\mkern-3mu\cdotp\mkern-3mu\cdotp}%
+}
+
+\newcommand{\mydots}{\scalebox{0.3}{$\dotsb$}}
+
+
+% numbers option provides compact numerical references in the text. 
+\usepackage[numbers]{natbib}
+\usepackage{multicol}
+\hypersetup{letterpaper,bookmarksopen,bookmarksnumbered,
+pdfpagemode=UseOutlines,
+colorlinks=true,
+linkcolor=blue,
+anchorcolor=blue,
+citecolor=blue,
+filecolor=blue,
+menucolor=blue,
+urlcolor=blue
+}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
+\makeatother
+
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\tblref}[1]{Table~\ref{#1}}
+\newcommand{\listingref}[1]{Listing~\ref{#1}}
+\newcommand{\defref}[1]{Definition~\ref{#1}}
+\newcommand{\lemref}[1]{Lemma~\ref{#1}}
+\newcommand{\thmref}[1]{Theorem~\ref{#1}}
+\newcommand{\eqnref}[1]{Equation~\ref{#1}}
+\newcommand{\bftt}[1]{{\ttfamily\bfseries{}#1}}
+\newcommand{\kw}[1]{\bftt{#1}}
+\newcommand{\eg}{{\em e.g.}}
+\newcommand{\cf}{{\em cf.}}
+\newcommand{\ie}{{\em i.e.}}
+\newcommand{\etc}{{\em etc.\/}}
+
+\newcommand{\cut}[1]{}
