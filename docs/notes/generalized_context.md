@@ -91,6 +91,9 @@ is, a context can be considered[^data] as follows:
   For $\mathbb{P}$ the set of all probability distributions, a \textbf{context} is a function 
 $c:\mathbb{P}\to\mathbb{P}$ such that for distributions $p,p'\in\mathbb{P}$ and such that $c(p)=p'$, 
 \end{definition}
+**TODO: The problem here is that I don't know how to construct instances of the function interface,
+and what I can construct - the voting algorithm - doesn't fit with the intuition or interface or 
+feel novel enough.**
 
 [^data]: From the point of view of the grounding operation, at least - there's obviously some 
 associated data and computation included in a context outside of this.
